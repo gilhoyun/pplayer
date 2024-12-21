@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.RestTemplate;
 
 import com.example.demo.dto.Member;
@@ -48,6 +49,7 @@ public class UsrKakaoController {
     }
 
     @GetMapping("/usr/kakao/callback")
+    @ResponseBody
     public String kakaoCallback(@RequestParam("code") String code, HttpServletRequest req) {
         // 카카오 OAuth2 인증 코드로 액세스 토큰 요청
         String tokenUrl = "https://kauth.kakao.com/oauth/token";

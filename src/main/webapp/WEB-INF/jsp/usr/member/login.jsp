@@ -26,7 +26,6 @@
 		form.submit(); //입력한게 있을 때 실행(form에 있는게 그대로 전송)
 
 	}//form은 밑의 form의 this이다., value는 값이기 때문에 변수취급 할 수 있다.
-	
 </script>
 
 <section class="px-auto py-8">
@@ -53,7 +52,8 @@
 						</label>
 						<tr>
 							<td colspan="2">
-								<button class="w-full text-center px-4 py-2 bg-stone-400 text-white rounded hover:bg-stone-500 transition">로그인</button>
+								<button
+									class="w-full text-center px-4 py-2 bg-stone-400 text-white rounded hover:bg-stone-500 transition">로그인</button>
 							</td>
 						</tr>
 					</thead>
@@ -66,12 +66,18 @@
 					href="findLoginPw">비밀번호 찾기</a>
 			</div>
 		</div>
+		<div class="my-6 flex items-center">
+			<hr class="flex-grow border-t border-gray-300" />
+			<span class="px-4 text-gray-500 text-sm">SNS LOGIN</span>
+			<hr class="flex-grow border-t border-gray-300" />
+		</div>
 		<div class="mt-4 flex justify-center">
-    <a href="/usr/kakao/login" 
-       class="w-full text-center px-4 py-2 bg-yellow-400 text-black rounded hover:bg-yellow-500 transition inline-block">
-        카카오 로그인
-    </a>
-</div>
+			<a href="/usr/kakao/login"> <img
+				src="https://i0.wp.com/forhappywomen.com/wp-content/uploads/2018/11/%EC%82%B0%EB%B6%80%EC%9D%B8%EA%B3%BC-%ED%8F%AC%ED%95%B4%ED%94%BC%EC%9A%B0%EB%A8%BC-%EB%AC%B8%EC%9D%98-%EC%B9%B4%EC%B9%B4%EC%98%A4%ED%94%8C%EB%9F%AC%EC%8A%A4%EC%B9%9C%EA%B5%AC-%EB%B2%84%ED%8A%BC.png?resize=586%2C586&ssl=1"
+				alt="카카오 로그인 버튼"
+				class="w-10 h-10 object-cover hover:opacity-80 transition" />
+			</a>
+		</div>
 	</div>
 </section>
 
