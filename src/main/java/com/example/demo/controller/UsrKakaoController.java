@@ -96,8 +96,11 @@ public class UsrKakaoController {
             String name = jsonNode.path("properties").path("nickname").asText();
             String profileImage = jsonNode.path("properties").path("profile_image").asText();
 
+            // ID를 이메일의 @ 전까지로 설정
+            String loginId = email.split("@")[0];
+
             // 회원 여부 확인
-            Member existingMember = memberService.getMemberByLoginId(email);
+            Member existingMember = memberService.getMemberByLoginId(loginId);
             if (existingMember != null) {
                 // 이미 회원인 경우 로그인 처리
                 Rq rq = (Rq) req.getAttribute("rq");
@@ -109,10 +112,10 @@ public class UsrKakaoController {
             String loginPw = Util.encryptSHA256(UUID.randomUUID().toString());
             byte[] profileImageData = downloadImage(profileImage);
 
-            memberService.joinMember(email, loginPw, name, email, profileImageData);
+            memberService.joinMember(loginId, loginPw, name, email, profileImageData);
 
             // 가입 후 로그인 처리
-            Member newMember = memberService.getMemberByLoginId(email);
+            Member newMember = memberService.getMemberByLoginId(loginId);
             Rq rq = (Rq) req.getAttribute("rq");
             rq.login(newMember.getId());
 
